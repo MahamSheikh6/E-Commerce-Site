@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main>
+        <div class="container">
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+
+                <!-- Navbar brand -->
+                <span class="navbar-brand">Categories:</span>
+
+
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">All
+                                <span class="sr-only"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com/search?rlz=1C1CHWL_enPK982PK982&sxsrf=APq-WBtl6d-iCFmwFGD0XjN1vn8VPiUhGQ:1650286484486&source=univ&tbm=isch&q=shirt&fir=Z_Ezsov72QYHvM%252CQVEKApdAVHeJZM%252C_%253BPPu-HmauuK5d5M%252CDVlY27dCAkPhgM%252C_%253BBRMBh9gWYLi9OM%252C4yib2M4TMnyFnM%252C_%253Bcy7BBDHiD9CNGM%252CXkJJb1E9tfby5M%252C_%253BHfNbTfEH619d5M%252CN9qmFqZwCzg9hM%252C_%253Bs9vKatj5WWr5IM%252CQwkPbqWPWaqxQM%252C_%253BOou6CBR52CxN1M%252CQQWzDEnot2ANgM%252C_%253BllzIlCwnEI1jYM%252CQVEKApdAVHeJZM%252C_%253BDa8DKrUq601R4M%252CfCOiPq8mdboFgM%252C_%253B_2ypbSGV2e-veM%252CVNeZEjkGUe-kLM%252C_%253BzEeIBs1Apb0tvM%252CVAKMIi9fR6yx0M%252C_%253BDXnXznyabbzKkM%252CfnrnwDYQ6ZdHPM%252C_%253BaUwQS3bOG6AVaM%252Czvtq9_J5BqNR1M%252C_%253B0805AZUPRWY7pM%252CtTA2kggjO7GxMM%252C_%253Byg5BdYhcXshc7M%252CjpxdKudmv_6KLM%252C_%253BCMVO-f_vMYaJVM%252C32v1fWGB_Xa34M%252C_%253B6NrSiBVIUyV9PM%252CfnrnwDYQ6ZdHPM%252C_%253BLQyP6itgXunWbM%252ClbdH31QsHwSYQM%252C_&usg=AI4_-kTgXWogv6peZoww8DIqQrZdYGE1rw&sa=X&ved=2ahUKEwisxr2d1J33AhWhlFwKHXQWCh0QjJkEegQIBBAC&biw=1366&bih=625&dpr=1">Shirts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com/search?q=sports+wear&tbm=isch&ved=2ahUKEwiC24Sf1J33AhVrxYUKHWqpBSAQ2-cCegQIABAA&oq=sports+w&gs_lcp=CgNpbWcQARgAMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCCMQ7wMQJzoICAAQgAQQsQM6BwgAELEDEEM6BAgAEENQogdY8iFguS5oAXAAeACAAesBiAGpEJIBBTAuMy43mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=l19dYsKzLeuKlwTq0paAAg&bih=625&biw=1366&rlz=1C1CHWL_enPK982PK982">Sport wears</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com/search?q=outwear&rlz=1C1CHWL_enPK982PK982&sxsrf=APq-WBtFLue8OaQB4JbxdPZXdm_s-bdyJw:1650286553393&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiH86q-1J33AhWTiVwKHXj6CTQQ_AUoAXoECAEQAw&biw=1366&bih=625&dpr=1">Outwears</a>
+                        </li>
+
+                    </ul>
+                    <!-- Links -->
+
+                    <form class="form-inline">
+                        <div class="md-form my-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                    </form>
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <!--/.Navbar-->
+
+            <!--Section: Products v.3-->
+            {% include "product.html" %}
+            <section class="text-center mb-4">
+                <div class="row wow fadeIn">
+                    
+                        <div class="col-lg-3 col-md-6 mb-4">
+
+                            <div class="card">
+                                <div class="view overlay">
+                                    
+                                    {% if item.image.url %}
+                                        <img src="{{ item.image.url }}" class="card-img-top">
+                                    {% else %}
+                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
+                                             class="card-img-top">
+                                    {% endif %}
+                                    <a href="{{ item.get_absolute_url }}">
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+
+                                <div class="card-body text-center">
+                                    <a href="" class="grey-text">
+                                        <h5>A T-shirt, or tee shirt, is a style of fabric shirt named after the T shape of its body and sleeves.</h5>
+                                    </a>
+                                    <h5>
+                                        <strong>
+                                            <a href="{{ item.get_absolute_url }}"
+                                               class="dark-grey-text">T-Shirt
+                                            </a>
+                                        </strong>
+                                    </h5>
+
+                                    <h4 class="font-weight-bold blue-text">
+                                        <strong>$
+                                            {% if item.discount_price %}
+                                                45
+                                            {% else %}
+                                                100
+                                            {% endif %}
+                                        </strong>
+                                    </h4>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    
+                </div>
+
+            </section>
+            <!--Section: Products v.3-->
+
+            <!--Pagination-->
+                <nav class="d-flex justify-content-center wow fadeIn">
+                    <ul class="pagination pg-blue">
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.number }}">1
+                                <span class="sr-only"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+        </div>
+    </main>
+
+{% endblock content %}
+
+
